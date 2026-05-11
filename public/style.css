@@ -2,7 +2,7 @@
     --color-primary: #4A7C59;
     --color-primary-dark: #2D5A3D;
     --color-primary-light: #6EA17E;
-    --color-accent: #A8D5BA;
+    --color-accent: #ccdfd6;
     --color-light: #F7FCF9;
     --color-white: #FFFFFF;
     --color-text: #2C342E;
@@ -24,6 +24,7 @@ html {
 }
 
 body {
+
     font-family: 'Inter', sans-serif;
     color: var(--color-text);
     background-color: var(--color-white);
@@ -174,7 +175,7 @@ h1, h2, h3, h4, h5 {
     position: relative;
     overflow: hidden;
     padding-top: 100px;
-    background: linear-gradient(135deg, rgba(45, 90, 61, 0.92), rgba(74, 124, 89, 0.85)), 
+    background: linear-gradient(135deg, rgba(45, 90, 61, 0.92), rgba(74, 124, 89, 0.85)),
                 url('/assets/Ruach.jpeg') center center / cover no-repeat;
 }
 
@@ -184,7 +185,7 @@ h1, h2, h3, h4, h5 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, 
+    background: linear-gradient(45deg,
         rgba(45, 90, 61, 0.1) 0%,
         rgba(74, 124, 89, 0.15) 50%,
         rgba(168, 213, 186, 0.1) 100%);
@@ -224,7 +225,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .hero-title .highlight {
-    color: var(--color-accent);
+    color: white;
     font-family: 'Dancing Script', cursive;
     font-size: 3.8rem;
     display: block;
@@ -481,14 +482,14 @@ h1, h2, h3, h4, h5 {
 
 /* See More/Less Feature */
 .text-truncated {
-    max-height: 180px;
+    max-height: 500px;
     overflow: hidden;
     position: relative;
     transition: max-height 0.5s ease;
 }
 
 .text-truncated.expanded {
-    max-height: 800px;
+    max-height: 5000px;
 }
 
 .text-truncated:not(.expanded)::after {
@@ -917,5 +918,94 @@ h1, h2, h3, h4, h5 {
     }
     .service-card {
         padding: 28px 22px;
+    }
+}
+
+.appointment-info {
+    background: rgba(168, 213, 186, 0.1);
+    border-left: 3px solid var(--color-primary);
+    padding: 20px;
+    margin: 24px 0;
+    border-radius: 0 10px 10px 0;
+}
+
+.appointment-info p {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.appointment-info strong {
+    color: var(--color-primary-dark);
+    font-size: 16px;
+}
+@media (max-width: 768px) {
+    #services .services-header .services-title {
+        font-size: 30px;
+    }
+    #services [style*="grid-template-columns: 1fr 1fr"] {
+        display: block !important;
+    }
+    #services [style*="border-right"] {
+        border-right: none !important;
+        border-bottom: 1px solid var(--color-border);
+        padding: 32px 24px !important;
+    }
+    #services [style*="padding: 44px 40px"] {
+        padding: 32px 24px !important;
+    }
+    #services [style*="padding: 36px 40px"] {
+        padding: 28px 24px !important;
+    }
+    #services [style*="padding: 28px 40px"] {
+        padding: 24px !important;
+        flex-direction: column !important;
+        text-align: center;
+    }
+}
+@media (max-width: 768px) {
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .about-image {
+        min-height: 320px;
+    }
+
+    .therapist-profile {
+        padding: 24px 20px;
+    }
+
+    .therapist-name {
+        font-size: 24px;
+    }
+
+    .therapist-credentials {
+        font-size: 14px;
+    }
+
+    .verification-badge {
+        font-size: 13px;
+        padding: 5px 14px;
+    }
+
+    .about-text {
+        font-size: 14px;
+    }
+
+    .appointment-info {
+        padding: 16px;
+    }
+
+    .appointment-info p {
+        font-size: 14px;
+    }
+
+
+
+
+    .therapist-footer .btn {
+        width: 100%;
+        text-align: center;
     }
 }

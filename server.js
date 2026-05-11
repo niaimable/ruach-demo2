@@ -5,6 +5,8 @@ const compression = require('compression');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+const version = Date.now();
+
 // Middleware
 app.use(compression()); // Gzip compression
 app.use(express.static(path.join(__dirname, 'public'), {
