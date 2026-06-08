@@ -1,132 +1,69 @@
-// Mobile Menu Toggle
-const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-const mainNav = document.getElementById('mainNav');
+// ===== PRELOADER =====
+function hidePreloader() {
+    const p = document.getElementById('preloader');
+    if (p) p.classList.add('hidden');
+}
+window.addEventListener('load', () => setTimeout(hidePreloader, 400));
+setTimeout(hidePreloader, 2500);
 
-if (mobileMenuBtn && mainNav) {
-    mobileMenuBtn.addEventListener('click', function() {
-        mainNav.style.display = mainNav.style.display === 'block' ? 'none' : 'block';
-        this.innerHTML = mainNav.style.display === 'block' ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+// ===== MOBILE MENU =====
+const menuBtn = document.getElementById('menu-btn');
+const mainNav = document.getElementById('main-nav');
+
+if (menuBtn && mainNav) {
+    menuBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        const isOpen = mainNav.classList.toggle('open');
+        this.innerHTML = isOpen
+            ? '<i class="fas fa-times"></i>'
+            : '<i class="fas fa-bars"></i>';
+    });
+    document.addEventListener('click', function (e) {
+        if (!mainNav.contains(e.target) && !menuBtn.contains(e.target)) {
+            mainNav.classList.remove('open');
+            menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        }
     });
 }
 
-// Header Scroll Effect
-window.addEventListener('scroll', function() {
-    const header = document.querySelector('.site-header');
-    if (header) {
-        if (window.scrollY > 100) {
-            header.style.padding = '10px 0';
-            header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.08)';
-        } else {
-            header.style.padding = '15px 0';
-            header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.05)';
-        }
-    }
-});
+// ===== HEADER SCROLL =====
+const header = document.getElementById('site-header');
+window.addEventListener('scroll', function () {
+    if (!header) return;
+    header.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
 
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+// ===== SMOOTH SCROLL =====
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function (e) {
+        const id = this.getAttribute('href');
+        if (id === '#') return;
+        const el = document.querySelector(id);
+        if (!el) return;
         e.preventDefault();
-        const targetId = this.getAttribute('href');
-        if(targetId === '#') return;
-        const targetElement = document.querySelector(targetId);
-        if(targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop - 80,
-                behavior: 'smooth'
-            });
-            // Close mobile menu if open
-            if(window.innerWidth <= 768 && mainNav) {
-                mainNav.style.display = 'none';
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            }
+        window.scrollTo({ top: el.offsetTop - 80, behavior: 'smooth' });
+        if (mainNav) {
+            mainNav.classList.remove('open');
+            if (menuBtn) menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
         }
     });
 });
 
-// See More/Less Feature for About Me
+// ===== READ MORE =====
 const readMoreBtn = document.getElementById('readMoreBtn');
-const truncatedText = document.getElementById('truncatedText');
-let isExpanded = false;
-
-if (readMoreBtn && truncatedText) {
-    readMoreBtn.addEventListener('click', function() {
-        isExpanded = !isExpanded;
-        
-        if (isExpanded) {
-            truncatedText.classList.add('expanded');
-            this.innerHTML = '<span>Read Less</span> <i class="fas fa-chevron-up"></i>';
-        } else {
-            truncatedText.classList.remove('expanded');
-            this.innerHTML = '<span>Read More</span> <i class="fas fa-chevron-down"></i>';
-        }
+const aboutText = document.getElementById('aboutText');
+if (readMoreBtn && aboutText) {
+    readMoreBtn.addEventListener('click', function () {
+        const expanded = aboutText.classList.toggle('expanded');
+        this.innerHTML = expanded
+            ? '<span>Read Less</span> <i class="fas fa-chevron-up"></i>'
+            : '<span>Read More</span> <i class="fas fa-chevron-down"></i>';
     });
 }
 
-// Animate stats counter on scroll
-const statNumbers = document.querySelectorAll('.stat-number');
-const observerOptions = {
-    threshold: 0.5,
-    rootMargin: '0px 0px -100px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const statNumber = entry.target;
-            const targetNumber = parseInt(statNumber.textContent.replace('+', ''));
-            let currentNumber = 0;
-            const increment = targetNumber / 50;
-            const timer = setInterval(() => {
-                currentNumber += increment;
-                if (currentNumber >= targetNumber) {
-                    statNumber.textContent = targetNumber + '+';
-                    clearInterval(timer);
-                } else {
-                    statNumber.textContent = Math.floor(currentNumber) + '+';
-                }
-            }, 30);
-            observer.unobserve(statNumber);
-        }
-    });
-}, observerOptions);
-
-statNumbers.forEach(statNumber => {
-    observer.observe(statNumber);
-});
-
-// PWA Service Worker Registration
+// ===== PWA SERVICE WORKER =====
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
-            .then(registration => {
-                console.log('ServiceWorker registration successful with scope: ', registration.scope);
-            })
-            .catch(err => {
-                console.log('ServiceWorker registration failed: ', err);
-            });
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
     });
 }
-
-// Lazy loading for images
-document.addEventListener('DOMContentLoaded', function() {
-    const images = document.querySelectorAll('img[loading="lazy"]');
-    
-    if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src || img.src;
-                    img.classList.add('loaded');
-                    imageObserver.unobserve(img);
-                }
-            });
-        });
-        
-        images.forEach(img => imageObserver.observe(img));
-    }
-});
-
-// Add loading class for CSS transitions
-document.body.classList.add('loaded');

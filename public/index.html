@@ -3,316 +3,299 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruach Counselling & Psychotherapy</title>
+    <title>Ruach Counselling & Psychotherapy | Ottawa</title>
+    <meta name="description" content="Individual therapy with Melissa Teta Muyenzi, Registered Psychotherapist (Qualifying). Trauma-informed, relational psychodynamic approach. In-person & virtual. Ottawa, ON. $150/session.">
+    <meta name="keywords" content="counselling, psychotherapy, therapy, Ottawa, trauma, anxiety, depression, grief, Black community, individual therapy, Melissa Muyenzi">
+    <meta name="robots" content="index, follow">
+    <meta name="google-site-verification" content="REPLACE_WITH_YOUR_VERIFICATION_CODE">
+    <link rel="canonical" href="https://ruachcounsellingandpsychotherapy.com/">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="manifest.json">
-
-    <!-- Icons -->
-    <link rel="icon" href="assets/favicon.ico">
-    <link rel="apple-touch-icon" href="assets/logo_ruach.jpeg">
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-    <!-- Icon Library -->
+    <!-- Structured Data: Local Business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "name": "Ruach Counselling & Psychotherapy",
+      "url": "https://ruachcounsellingandpsychotherapy.com",
+      "logo": "https://ruachcounsellingandpsychotherapy.com/assets/logo_ruach.png",
+      "image": "https://ruachcounsellingandpsychotherapy.com/assets/melissa.jpeg",
+      "description": "Individual therapy with Melissa Teta Muyenzi, Registered Psychotherapist (Qualifying). Trauma-informed, relational psychodynamic approach. In-person & virtual. Ottawa, ON.",
+      "telephone": "+16136018185",
+      "email": "ruach.psychotherapy@gmail.com",
+      "priceRange": "$150",
+      "currenciesAccepted": "CAD",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1900 City Park Drive, Suite 408",
+        "addressLocality": "Ottawa",
+        "addressRegion": "ON",
+        "postalCode": "K1J 1A3",
+        "addressCountry": "CA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 45.4215,
+        "longitude": -75.6972
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "09:00",
+          "closes": "21:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/",
+        "https://www.instagram.com/",
+        "https://www.linkedin.com/"
+      ],
+      "hasMap": "https://maps.google.com/?q=1900+City+Park+Drive+Suite+408+Ottawa+ON",
+      "areaServed": {
+        "@type": "City",
+        "name": "Ottawa"
+      },
+      "serviceType": ["Individual Therapy","Trauma-Informed Care","Grief Counselling","Psychotherapy"],
+      "founder": {
+        "@type": "Person",
+        "name": "Melissa Teta Muyenzi",
+        "jobTitle": "Registered Psychotherapist (Qualifying)",
+        "description": "MA, RP(Q) — Registered with the College of Registered Psychotherapists of Ontario, #17399"
+      }
+    }
+    </script>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ruach Counselling & Psychotherapy | Ottawa">
+    <meta property="og:description" content="Compassionate individual therapy with Melissa Teta Muyenzi, RP(Q).">
+    <meta property="og:image" content="/assets/melissa.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/png" href="/assets/logo.png">
+    <link rel="apple-touch-icon" href="/assets/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css?v=<%= version %>">
+    <link rel="stylesheet" href="/style.css?v=20250608">
 </head>
 <body>
-    <!-- Header -->
-    <header class="site-header">
-        <div class="container header-container">
-            <img src="assets/logo_ruach.jpeg" alt="Ruach Counselling" class="logo">
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
+
+    <!-- PRELOADER -->
+    <div id="preloader">
+        <div class="preloader-inner">
+            <img src="/assets/logo.png" alt="Ruach">
+            <div class="preloader-bar"><div class="preloader-fill"></div></div>
+            <p>A space for healing to begin</p>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header id="site-header">
+        <div class="container header-inner">
+            <a href="#home"><img src="/assets/logo_ruach.png" alt="Ruach Counselling" class="header-logo"></a>
+            <button id="menu-btn" aria-label="Open menu">
                 <i class="fas fa-bars"></i>
             </button>
-            <nav class="main-navigation" id="mainNav">
+            <nav id="main-nav">
                 <ul>
                     <li><a href="#home">Home</a></li>
+                    <span class="dot"></span>
                     <li><a href="#about">About Me</a></li>
+                    <span class="dot"></span>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li class="nav-cta"><a href="https://ruachcounsellingandpsychotherapy.janeapp.com/#staff_member/1" class="btn btn-primary">Book Session</a></li>
+                    <span class="dot"></span>
+                    <li><a href="#pain">Our Approach</a></li>
+                    <span class="dot"></span>
+                    <li class="book-li"><a href="https://ruachcounsellingandpsychotherapy.janeapp.com/#staff_member/1" target="_blank" class="book-btn">Book Session</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero-section" id="home">
+    <!-- HERO -->
+    <section id="home" class="hero">
         <div class="hero-overlay"></div>
-        <div class="hero-content">
-
-            <h1 class="hero-title">
-                Ruach Counselling
-                <span class="highlight">& Psychotherapy</span>
-            </h1>
-            <p class="hero-description">
-                “When we acknowledge where we come from and begin to understand ourselves— that is where
-                healing begins and meaningful change takes root.”
-            </p>
+        <div class="hero-inner">
+            <span class="hero-badge">Counselling &amp; Psychotherapy</span>
+            <h1>Ruach Counselling<br>&amp; Psychotherapy</h1>
+            <p class="hero-quote">"When we acknowledge where we come from and begin to understand ourselves — that is where healing begins and meaningful change takes root."</p>
             <div class="hero-actions">
-                <a href="https://ruachcounsellingandpsychotherapy.janeapp.com/#staff_member/1" class="btn btn-primary">Meet Your Therapist</a>
-
-            </div>
-
-
-        </div>
-
-    </section>
-<!-- ABOUT ME SECTION -->
-<section class="about-section" id="about">
-    <div class="container about-container">
-        <div class="about-image">
-            <img src="assets/melissa.jpeg" alt="Melissa Teta Muyenzi, Registered Psychotherapist" loading="lazy">
-        </div>
-
-        <div class="about-content">
-            <div class="therapist-profile">
-                <div class="therapist-header">
-                    <h3 class="therapist-name">Melissa Teta Muyenzi</h3>
-                    <p class="therapist-credentials">Registered Psychotherapist (Qualifying), MA, RP(Q)</p>
-                    <div class="verification-badge">
-                        <i class="fas fa-check-circle"></i> Verified by Psychology Today
+                <a href="https://ruachcounsellingandpsychotherapy.janeapp.com/#staff_member/1" target="_blank" class="btn-hero">Book a Session</a>
+                <div class="hero-phone">
+                    <div class="phone-icon"><i class="fas fa-phone"></i></div>
+                    <div>
+                        <span class="phone-label">Give Us a Call</span>
+                        <a href="tel:+16136018185" class="phone-number">+1 (613) 601-8185</a>
                     </div>
                 </div>
-
-                <div class="therapist-details">
-                    <div class="about-text-content">
-                        <div class="text-truncated" id="truncatedText">
-                            <p class="about-text">
-                                For as long as I can remember, I have been deeply curious about human behavior, often wondering what lies beneath people's emotions, reactions, and choices. Throughout my life, I have naturally found myself listening, comforting, and encouraging others, whether friends or strangers.
-                            </p>
-                            <p class="about-text">
-                                My own experiences with loss—the end of relationships, dreams that did not unfold as hoped, and the death of loved ones—have deeply shaped who I am today. These experiences strengthened my understanding of grief, vulnerability, and emotional resilience, which, together with my professional training, guide the way I approach therapy.
-                            </p>
-                            <p class="about-text">
-                                Beyond the clinical setting, Melissa is actively engaged in the Black community, working to help break the stigma surrounding mental health. She initiates courageous conversations, creates safe spaces, and collaborates with community networks to support collective healing rooted in dignity and belonging.
-                            </p>
-
-                            <div class="appointment-info">
-                                <p><strong>Joy &amp; Personal Life</strong></p>
-                                <p>Outside of her work, Melissa enjoys connecting with loved ones, reading, writing, and drinking copious cups of tea. Her spare time often includes shared meals and good laughter with family and friends while reflecting on the unfolding drama of life. I try to move through each day with intention—making space for exercise, journaling, rest, and prayer while navigating both the joys and challenges that life brings.</p>
-                            </div>
-
-                            <div class="appointment-info" style="margin-top: 16px;">
-                                <p><strong>Professional Affiliation</strong></p>
-                                <p>• Psychotherapist, RP (Qualifying)</p>
-                                <p>• Registered with the College of Registered Psychotherapists of Ontario</p>
-                                <p>• Registration number: 17399</p>
-                                <p>• Membership with Canadian Counselling and Psychotherapy Association</p>
-                            </div>
-
-                            <div class="appointment-info" style="margin-top: 16px;">
-                                <p><strong>Education</strong></p>
-                                <p>• M.A. in Counselling, Psychotherapy and Spirituality</p>
-                                <p>• Saint Paul University, Ottawa</p>
-                                <p style="margin-top: 8px;"><strong>Certificates:</strong></p>
-                                <p>• DBT</p>
-                                <p>• ASSIST</p>
-                            </div>
-                        </div>
-
-                        <button class="read-more-btn" id="readMoreBtn">
-                            <span>Read More</span>
-                            <i class="fas fa-chevron-down"></i>
-                        </button>
-                    </div>
-
-                    <div class="therapist-footer">
-                        <p class="about-text" style="font-weight: 600; color: var(--color-primary-dark); margin-bottom: 20px; font-size: 16px;">
-                            I am now accepting new clients in-person/virtually. Let's connect!
-                        </p>
-                        <a href="https://ruachcounsellingandpsychotherapy.janeapp.com/#staff_member/1" class="btn btn-primary" style="font-size: 15px; padding: 12px 32px;">Book a Session with Me</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- Services Section -->
-<section class="services-section" id="services">
-    <div class="container">
-        <div class="services-header">
-            <h2 class="services-title">Individual Therapy</h2>
-            <p class="services-desc">
-                A warm, caring space to explore your inner world, relationships, and emotional challenges — at your own pace.
-            </p>
-        </div>
-
-        <div style="background: var(--color-white); border-radius: 20px; border: 1px solid var(--color-border); overflow: hidden; box-shadow: var(--shadow-subtle);">
-
-            <!-- Top split panel -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr;">
-
-                <!-- Left: narrative -->
-                <div style="padding: 44px 40px; border-right: 1px solid var(--color-border);">
-                    <h3 style="font-family: 'Playfair Display', serif; font-size: 26px; color: var(--color-primary-dark); margin-bottom: 16px;">How I work with you</h3>
-                    <p style="font-size: 15px; color: var(--color-text-light); line-height: 1.75; margin-bottom: 16px;">
-                        I take a relational psychodynamic and trauma-informed approach, integrating other therapeutic modalities to create a holistic treatment plan tailored to your unique needs and experiences.
-                    </p>
-                    <p style="font-size: 15px; color: var(--color-text-light); line-height: 1.75;">
-                        By creating a safe space, individual therapy provides a warm and caring environment where we can explore your inner world, relationships, and emotional challenges affecting your everyday life.
-                    </p>
-                </div>
-
-                <!-- Right: session details -->
-                <div style="padding: 44px 40px; background: var(--color-light); display: flex; flex-direction: column; gap: 24px;">
-
-                    <div style="display: flex; align-items: flex-start; gap: 14px;">
-                        <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--color-accent); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--color-primary-dark); font-size: 18px;">
-                            <i class="fas fa-video"></i>
-                        </div>
-                        <div>
-                            <strong style="display: block; font-size: 14px; color: var(--color-primary-dark); margin-bottom: 3px;">Session format</strong>
-                            <span style="font-size: 14px; color: var(--color-text-light);">In-person &amp; virtual available</span>
-                        </div>
-                    </div>
-
-                    <div style="display: flex; align-items: flex-start; gap: 14px;">
-                        <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--color-accent); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--color-primary-dark); font-size: 18px;">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div>
-                            <strong style="display: block; font-size: 14px; color: var(--color-primary-dark); margin-bottom: 3px;">Who I work with</strong>
-                            <span style="font-size: 14px; color: var(--color-text-light);">Adults 18 and older</span>
-                        </div>
-                    </div>
-
-                    <div style="display: flex; align-items: flex-start; gap: 14px;">
-                        <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--color-accent); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--color-primary-dark); font-size: 18px;">
-                            <i class="fas fa-tag"></i>
-                        </div>
-                        <div>
-                            <strong style="display: block; font-size: 14px; color: var(--color-primary-dark); margin-bottom: 3px;">Session fee</strong>
-                            <span style="font-size: 14px; color: var(--color-text-light);">$150 per session</span>
-                        </div>
-                    </div>
-
-                    <div style="display: flex; align-items: flex-start; gap: 14px;">
-                        <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--color-accent); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--color-primary-dark); font-size: 18px;">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <div>
-                            <strong style="display: block; font-size: 14px; color: var(--color-primary-dark); margin-bottom: 3px;">Languages</strong>
-                            <span style="font-size: 14px; color: var(--color-text-light);">English &amp; French</span>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Areas strip -->
-            <div style="padding: 36px 40px; border-top: 1px solid var(--color-border);">
-                <h4 style="font-family: 'Playfair Display', serif; font-size: 20px; color: var(--color-primary-dark); margin-bottom: 20px;">Areas we explore together</h4>
-                <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                    <span style="background: var(--color-light); border: 1px solid var(--color-accent); color: var(--color-primary-dark); border-radius: 50px; padding: 6px 18px; font-size: 13px; font-weight: 500;">Trauma</span>
-                    <span style="background: var(--color-light); border: 1px solid var(--color-accent); color: var(--color-primary-dark); border-radius: 50px; padding: 6px 18px; font-size: 13px; font-weight: 500;">Attachment wounds</span>
-                    <span style="background: var(--color-light); border: 1px solid var(--color-accent); color: var(--color-primary-dark); border-radius: 50px; padding: 6px 18px; font-size: 13px; font-weight: 500;">Depression</span>
-                    <span style="background: var(--color-light); border: 1px solid var(--color-accent); color: var(--color-primary-dark); border-radius: 50px; padding: 6px 18px; font-size: 13px; font-weight: 500;">Anxiety</span>
-                    <span style="background: var(--color-light); border: 1px solid var(--color-accent); color: var(--color-primary-dark); border-radius: 50px; padding: 6px 18px; font-size: 13px; font-weight: 500;">Grief &amp; Loss</span>
-                    <span style="background: var(--color-light); border: 1px solid var(--color-accent); color: var(--color-primary-dark); border-radius: 50px; padding: 6px 18px; font-size: 13px; font-weight: 500;">Relational anxiety</span>
-                    <span style="background: var(--color-light); border: 1px solid var(--color-accent); color: var(--color-primary-dark); border-radius: 50px; padding: 6px 18px; font-size: 13px; font-weight: 500;">Social anxiety</span>
-                    <span style="background: var(--color-light); border: 1px solid var(--color-accent); color: var(--color-primary-dark); border-radius: 50px; padding: 6px 18px; font-size: 13px; font-weight: 500;">Life stress</span>
-                    <span style="background: var(--color-light); border: 1px solid var(--color-accent); color: var(--color-primary-dark); border-radius: 50px; padding: 6px 18px; font-size: 13px; font-weight: 500;">Work / School stress</span>
-                    <span style="background: var(--color-light); border: 1px solid var(--color-accent); color: var(--color-primary-dark); border-radius: 50px; padding: 6px 18px; font-size: 13px; font-weight: 500;">Behaviour patterns</span>
-                    <span style="background: var(--color-light); border: 1px solid var(--color-accent); color: var(--color-primary-dark); border-radius: 50px; padding: 6px 18px; font-size: 13px; font-weight: 500;">Interpersonal problems</span>
-                    <span style="background: var(--color-light); border: 1px solid var(--color-accent); color: var(--color-primary-dark); border-radius: 50px; padding: 6px 18px; font-size: 13px; font-weight: 500;">Life transitions</span>
-                    <span style="background: var(--color-light); border: 1px solid var(--color-accent); color: var(--color-primary-dark); border-radius: 50px; padding: 6px 18px; font-size: 13px; font-weight: 500;">Racial burnout</span>
-                    <span style="background: var(--color-light); border: 1px solid var(--color-accent); color: var(--color-primary-dark); border-radius: 50px; padding: 6px 18px; font-size: 13px; font-weight: 500;">Racial identity</span>
-                    <span style="background: var(--color-light); border: 1px solid var(--color-accent); color: var(--color-primary-dark); border-radius: 50px; padding: 6px 18px; font-size: 13px; font-weight: 500;">Racial trauma</span>
-                    <span style="background: var(--color-light); border: 1px solid var(--color-accent); color: var(--color-primary-dark); border-radius: 50px; padding: 6px 18px; font-size: 13px; font-weight: 500;">Family conflict</span>
-                    <span style="background: var(--color-light); border: 1px solid var(--color-accent); color: var(--color-primary-dark); border-radius: 50px; padding: 6px 18px; font-size: 13px; font-weight: 500;">Self-awareness</span>
-                    <span style="background: var(--color-light); border: 1px solid var(--color-accent); color: var(--color-primary-dark); border-radius: 50px; padding: 6px 18px; font-size: 13px; font-weight: 500;">Personal growth</span>
-                    <span style="background: var(--color-light); border: 1px solid var(--color-accent); color: var(--color-primary-dark); border-radius: 50px; padding: 6px 18px; font-size: 13px; font-weight: 500;">Self-esteem</span>
-                    <span style="background: var(--color-light); border: 1px solid var(--color-accent); color: var(--color-primary-dark); border-radius: 50px; padding: 6px 18px; font-size: 13px; font-weight: 500;">Spiritual conflict</span>
-                    <span style="background: var(--color-light); border: 1px solid var(--color-accent); color: var(--color-primary-dark); border-radius: 50px; padding: 6px 18px; font-size: 13px; font-weight: 500;">Suicidality</span>
-                    <span style="background: var(--color-light); border: 1px solid var(--color-accent); color: var(--color-primary-dark); border-radius: 50px; padding: 6px 18px; font-size: 13px; font-weight: 500;">Emotional dysregulation</span>
-                    <span style="background: var(--color-light); border: 1px solid var(--color-accent); color: var(--color-primary-dark); border-radius: 50px; padding: 6px 18px; font-size: 13px; font-weight: 500;">Women's issues</span>
-                    <span style="background: var(--color-light); border: 1px solid var(--color-accent); color: var(--color-primary-dark); border-radius: 50px; padding: 6px 18px; font-size: 13px; font-weight: 500;">Parenting</span>
-                </div>
-            </div>
-
-            <!-- Footer CTA -->
-            <div style="padding: 28px 40px; background: var(--color-primary-dark); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
-                <p style="color: rgba(255,255,255,0.9); font-size: 15px; margin: 0;">Currently accepting new clients &mdash; in-person &amp; virtually.</p>
-                <a href="https://ruachcounsellingandpsychotherapy.janeapp.com/#staff_member/1" class="btn" style="background: var(--color-white); color: var(--color-primary-dark); font-size: 14px; padding: 11px 28px;">Book a Session</a>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-
-    <!-- CTA Section
-    <section class="cta-section" id="contact">
-        <div class="container">
-            <div class="cta-content">
-                <h2 class="cta-title">Ready to Begin Your Healing Journey?</h2>
-                <p class="cta-text">
-                    Take the first courageous step toward healing and personal transformation. We're here to walk with you on your journey to wholeness.
-                </p>
-                <a href="https://ruachcounsellingandpsychotherapy.janeapp.com/#staff_member/1" class="btn cta-btn">Schedule a Session</a>
             </div>
         </div>
     </section>
-    -->
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-col footer-about">
-                    <img src="assets/logo_ruach.jpeg" alt="Ruach Counselling" class="logo">
-                    <p>Ruach Counselling & Psychotherapy is dedicated to providing compassionate, professional mental health support in a safe and confidential environment.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+    <!-- ABOUT -->
+    <section id="about" class="about">
+        <div class="container about-grid">
+            <div class="about-img">
+                <img src="/assets/melissa.jpeg" alt="Melissa Teta Muyenzi">
+            </div>
+            <div class="about-content">
+                <div class="about-card">
+                    <h2>Melissa Teta Muyenzi</h2>
+                    <p class="credentials">Registered Psychotherapist (Qualifying), MA, RP(Q)</p>
+                    <div class="about-text-wrap" id="aboutText">
+                        <p>For as long as I can remember, I have been deeply curious about human behavior, often wondering what lies beneath people's emotions, reactions, and choices. Throughout my life, I have naturally found myself listening, comforting, and encouraging others, whether friends or strangers.</p>
+                        <p>My own experiences with loss — the end of relationships, dreams that did not unfold as hoped, and the death of loved ones — have deeply shaped who I am today. These experiences strengthened my understanding of grief, vulnerability, and emotional resilience, which, together with my professional training, guide the way I approach therapy.</p>
+                        <p>Beyond the clinical setting, I am actively engaged in the Black community, working to help break the stigma surrounding mental health. I initiate courageous conversations, create safe spaces, and collaborate with community networks to support collective healing rooted in dignity and belonging.</p>
+                        <div class="info-block">
+                            <p><strong>Joy &amp; Personal Life</strong></p>
+                            <p>Outside of my work, I enjoy connecting with loved ones, reading, writing, and drinking copious cups of tea. My spare time often includes shared meals and good laughter with family and friends. I try to move through each day with intention — making space for exercise, journaling, rest, and prayer.</p>
+                        </div>
+                        <div class="info-block">
+                            <p><strong>Professional Affiliation</strong></p>
+                            <p>• Psychotherapist, RP (Qualifying)</p>
+                            <p>• Registered with the College of Registered Psychotherapists of Ontario</p>
+                            <p>• Registration number: 17399</p>
+                            <p>• Member, Canadian Counselling and Psychotherapy Association</p>
+                        </div>
+                        <div class="info-block">
+                            <p><strong>Education</strong></p>
+                            <p>• M.A. in Counselling, Psychotherapy and Spirituality</p>
+                            <p>• Saint Paul University, Ottawa</p>
+                            <p>• Certificates: DBT &nbsp;•&nbsp; ASSIST</p>
+                        </div>
+                    </div>
+                    <button class="read-more-btn" id="readMoreBtn">
+                        <span>Read More</span> <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="about-footer">
+                        <p class="accepting">Now accepting new clients — in-person &amp; virtually. Let's connect!</p>
+                        <a href="https://ruachcounsellingandpsychotherapy.janeapp.com/#staff_member/1" target="_blank" class="btn-primary">Book a Session with Me</a>
                     </div>
                 </div>
-                <div class="footer-col footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About Me</a></li>
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
-                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
-                    </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Individual Therapy</h2>
+                <p>A warm, caring space to explore your inner world, relationships, and emotional challenges — at your own pace.</p>
+            </div>
+            <div class="services-card">
+                <div class="services-split">
+                    <div class="services-left">
+                        <h3>How I work with you</h3>
+                        <p>By creating a safe space, individual therapy provides a warm and caring environment where we can explore your inner world, relationships, and emotional challenges that are affecting you in your everyday life.</p>
+                        <p>I take a relational psychodynamic and trauma-informed approach, integrating other therapeutic modalities to create a holistic treatment plan tailored to your unique needs and experiences.</p>
+                    </div>
+                    <div class="services-right">
+                        <div class="detail-item">
+                            <div class="detail-icon"><i class="fas fa-video"></i></div>
+                            <div><strong>Session format</strong><span>In-person &amp; virtual available</span></div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-icon"><i class="fas fa-user"></i></div>
+                            <div><strong>Who I work with</strong><span>Adults 16+</span></div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-icon"><i class="fas fa-tag"></i></div>
+                            <div><strong>Session fee</strong><span>$150 per session</span></div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-icon"><i class="fas fa-globe"></i></div>
+                            <div><strong>Languages</strong><span>English &amp; French</span></div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-icon"><i class="far fa-clock"></i></div>
+                            <div><strong>Availability</strong><span>Daytime &amp; evening appointments</span></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="footer-col footer-links">
-                    <h4>Our Services</h4>
-                    <ul>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Individual Therapy</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> How I work with you</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Who I work with</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Areas we explore together</a></li>
-                    </ul>
+                <div class="services-areas">
+                    <h4>We explore the following areas</h4>
+                    <div class="tags">
+                        <span>Trauma</span><span>Attachment wound</span><span>Depression</span><span>Anxiety</span>
+                        <span>Grief / Loss</span><span>Relational Anxiety / Social anxiety</span><span>Life stress</span>
+                        <span>Work / School stress</span><span>Behaviour patterns</span><span>Expression of thoughts and emotions</span>
+                        <span>Interpersonal problems</span><span>Life transitions</span><span>Racial burnout</span>
+                        <span>Racial identity</span><span>Racial trauma</span><span>Family conflict</span>
+                        <span>Self-awareness</span><span>Self-development / Personal growth</span><span>Self-esteem issues</span>
+                        <span>Spiritual conflict</span><span>Suicidality</span><span>Emotional dysregulation</span>
+                        <span>Women's issues</span><span>Parenting</span><span>Separation / Divorce</span>
+                    </div>
                 </div>
-                <div class="footer-col footer-contact">
-                    <h4>Contact Us</h4>
-
-                    <p><i class="fas fa-map-marker-alt"></i> .... </p>
-                    <p><i class="fas fa-phone"></i> 613-601-8185</p>
-                    <p><i class="fas fa-map-marker-alt"></i> 1900 City park, suite 408 Ottawa, ON K1J</p>
-
-
-                    <p><i class="fas fa-envelope"></i>ruach.psychotherapy@gmail.com</p>
-                    <p><i class="far fa-clock"></i> Mon-Fri: 9am-6pm</p>
+                <div class="services-cta">
+                    <a href="https://ruachcounsellingandpsychotherapy.janeapp.com/#staff_member/1" target="_blank" class="btn-primary">Book a Session</a>
                 </div>
             </div>
-            <div class="copyright">
-<p>&copy; 2025 Ruach Counselling & Psychotherapy. All rights reserved. | <a href="#" style="color: var(--color-accent); text-decoration: none; font-size: 14px;">Privacy Policy</a> | <a href="#" style="color: var(--color-accent); text-decoration: none; font-size: 14px;">Terms of Service</a></p>
+        </div>
+    </section>
+
+    <!-- PAIN / OUR APPROACH -->
+    <section id="pain" class="pain">
+        <div class="container pain-grid">
+            <div class="pain-left">
+                <h2>We all carry pain.</h2>
+                <p class="pain-emphasis">Visible or invisible, pain deserves understanding and care.</p>
             </div>
+            <div class="pain-right">
+                <p>Sometimes the source is clear. A single moment or a series of traumatic experiences can deeply affect us — an accident, the loss of someone we love, or experiences of sexual, emotional, or physical abuse. These events can shake our sense of safety and change the way we see ourselves and the world around us.</p>
+                <p>Other times, pain develops more quietly. It can come from repeated moments that slowly wear us down — neglect, bullying, rejection, relationship struggles, financial stress, illness, or loss. To others, these experiences may seem less visible, yet their impact can be just as deep and life-altering.</p>
+                <p>I believe that the relationship we build together and the tools we explore can be a powerful force for healing, self-discovery, and transformation. It's an honour to walk alongside you in this process.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <img src="/assets/logo.png" alt="Ruach Counselling">
+                <p>Dedicated to providing compassionate, professional mental health support in a safe and confidential environment.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#pain">Our Approach</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Individual Therapy</a></li>
+                    <li><a href="#services">Trauma-Informed Care</a></li>
+                    <li><a href="#services">Grief &amp; Loss</a></li>
+                    <li><a href="#services">Separation &amp; Divorce</a></li>
+                    <li><a href="#services">Racial Identity &amp; Burnout</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p><i class="fas fa-phone"></i> <a href="tel:+16136018185">+1 (613) 601-8185</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> 1900 City Park Drive, Suite 408, Ottawa ON K1J 1A3</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:ruach.psychotherapy@gmail.com">ruach.psychotherapy@gmail.com</a></p>
+                <p><i class="far fa-clock"></i> Mon–Fri: 9am – 6pm</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Ruach Counselling &amp; Psychotherapy. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
         </div>
     </footer>
 
-    <!-- JavaScript -->
- <script src="/app.js"></script>
+    <!-- FLOATING WHATSAPP -->
+    <a href="https://wa.me/16136018185" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="/app.js"></script>
 </body>
 </html>
