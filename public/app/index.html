@@ -249,6 +249,31 @@
     </div>
   </header>
 
+  <!-- Mobile Bottom Navigation -->
+  <nav class="mobile-bottom-nav">
+    <a class="mobile-nav-item active" id="mob-home" onclick="goPPage('home',null);setMobNav('mob-home')">
+      <i class="fas fa-home"></i>
+      <span>Home</span>
+    </a>
+    <a class="mobile-nav-item" id="mob-book" onclick="goPPage('book',null);setMobNav('mob-book')">
+      <i class="fas fa-calendar-plus"></i>
+      <span>Book</span>
+    </a>
+    <a class="mobile-nav-item" id="mob-appointments" onclick="goPPage('appointments',null);setMobNav('mob-appointments')">
+      <i class="fas fa-calendar-check"></i>
+      <span>Sessions</span>
+    </a>
+    <a class="mobile-nav-item" id="mob-messages" onclick="goPPage('messages',null);setMobNav('mob-messages')">
+      <i class="fas fa-comment-dots"></i>
+      <span>Messages</span>
+      <span class="mobile-nav-badge" id="mob-msg-badge" style="display:none"></span>
+    </a>
+    <a class="mobile-nav-item" onclick="clientLogout()">
+      <i class="fas fa-sign-out-alt"></i>
+      <span>Sign out</span>
+    </a>
+  </nav>
+
   <main class="portal-main">
 
     <!-- Home -->

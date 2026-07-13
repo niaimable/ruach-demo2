@@ -330,11 +330,22 @@ async function submitIntake() {
 
 // ─── NAVIGATION ───────────────────────────────────────────────────────────
 
+function setMobNav(activeId) {
+  document.querySelectorAll('.mobile-nav-item').forEach(el => el.classList.remove('active'));
+  const el = document.getElementById(activeId);
+  if (el) el.classList.add('active');
+}
+
 function goPPage(page, linkEl) {
   document.querySelectorAll('.portal-page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.portal-nav a').forEach(a => a.classList.remove('active'));
   document.getElementById(`ppage-${page}`).classList.add('active');
   if (linkEl) linkEl.classList.add('active');
+  // Sync mobile bottom nav
+  const mobMap = { home: 'mob-home', book: 'mob-book', appointments: 'mob-appointments', messages: 'mob-messages' };
+  if (mobMap[page]) setMobNav(mobMap[page]);
+  // Scroll to top on page change
+  window.scrollTo(0, 0);
   if (page === 'appointments') loadClientAppointments();
   if (page === 'messages') loadClientMessages();
   if (page === 'home') loadHomePage();

@@ -1220,3 +1220,199 @@ tbody tr:hover { background: var(--light); }
 .pub-therapist-meta span { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-light); }
 .pub-therapist-meta i { color: var(--green); font-size: 12px; }
 .pub-cal-hint { font-size: 11px; color: var(--text-light); margin-top: 12px; text-align: center; }
+
+/* ═══════════════════════════════════════════════
+   MOBILE APP EXPERIENCE — COMPLETE OVERHAUL
+   ═══════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+
+  /* ── BODY & BASE ─────────────────────────── */
+  .client-body {
+    background: var(--light);
+    padding-bottom: 80px; /* space for bottom nav */
+  }
+
+  /* ── PORTAL HEADER → slim on mobile ─────── */
+  .portal-header {
+    padding: 10px 0;
+  }
+  .portal-header-inner {
+    padding: 0 16px;
+    gap: 10px;
+  }
+  .portal-header img {
+    height: 32px;
+  }
+  .portal-user-name { display: none; } /* hide name, save space */
+  .portal-user button {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+
+  /* ── HIDE TOP NAV → replaced by bottom nav ─ */
+  .portal-nav { display: none; }
+
+  /* ── BOTTOM NAV BAR ──────────────────────── */
+  .mobile-bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: var(--white);
+    border-top: 1px solid var(--border);
+    z-index: 500;
+    padding: 0;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+  }
+  .mobile-nav-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 4px 12px;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-light);
+    font-size: 10px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    transition: color 0.15s;
+    position: relative;
+    text-decoration: none;
+  }
+  .mobile-nav-item i { font-size: 20px; }
+  .mobile-nav-item span { font-size: 10px; }
+  .mobile-nav-item.active { color: var(--green); }
+  .mobile-nav-item.active i { color: var(--green); }
+  .mobile-nav-badge {
+    position: absolute;
+    top: 6px;
+    right: calc(50% - 18px);
+    background: var(--amber);
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ── PORTAL MAIN PADDING ─────────────────── */
+  .portal-main {
+    padding: 16px;
+  }
+
+  /* ── HOME PAGE CARDS ─────────────────────── */
+  .portal-page h1 {
+    font-size: 22px !important;
+    margin-bottom: 4px !important;
+  }
+  .portal-page > div > p {
+    font-size: 13px;
+    margin-bottom: 16px !important;
+  }
+
+  /* Quick action cards — 1 column stacked */
+  .portal-page > div > div[style*="grid-template-columns:1fr 1fr 1fr"] {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+    margin-bottom: 16px !important;
+  }
+
+  /* ── SESSION CARDS ───────────────────────── */
+  .card {
+    border-radius: var(--radius) !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+  }
+
+  /* Session apt card row */
+  .card > div[style*="display:flex;align-items:center;justify-content:space-between"] {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+
+  /* ── BOOKING CALENDAR ────────────────────── */
+  .booking-layout {
+    grid-template-columns: 1fr !important;
+    gap: 14px;
+  }
+  .mini-calendar { padding: 16px; }
+  .cal-day { font-size: 14px; min-height: 40px; }
+  .slots-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 8px; }
+  .slot-btn { padding: 14px 8px; font-size: 15px; }
+
+  /* ── MY SESSIONS PAGE ────────────────────── */
+  .portal-page h2 {
+    font-size: 20px !important;
+    margin-bottom: 14px !important;
+  }
+
+  /* Session card layout on mobile */
+  .card[style*="padding:20px;margin-bottom:12px"] {
+    padding: 16px !important;
+  }
+
+  /* ── MESSAGES ────────────────────────────── */
+  .card[style*="height:500px"] {
+    height: calc(100vh - 220px) !important;
+  }
+  .messages-compose textarea { height: 48px; font-size: 16px; }
+
+  /* ── PUBLIC BOOKING PAGE ─────────────────── */
+  .pub-booking-body { padding: 16px; }
+  .pub-therapist-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 16px;
+    gap: 12px;
+  }
+  .pub-therapist-meta { justify-content: center; }
+  .pub-therapist-img { width: 80px; height: 80px; }
+
+  .pub-booking-header-inner {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .pub-back-link { font-size: 12px; }
+
+  /* ── AUTH / LOGIN CARD ───────────────────── */
+  .login-screen { padding: 16px; align-items: flex-start; padding-top: 40px; }
+  .login-card { padding: 28px 20px; border-radius: 20px; }
+
+  /* ── INTAKE FORM ─────────────────────────── */
+  .intake-wrap { padding: 0; }
+  .intake-intro { border-radius: var(--radius); padding: 20px; }
+  .intake-intro h2 { font-size: 20px; }
+
+  /* ── FORMS ───────────────────────────────── */
+  .form-row { grid-template-columns: 1fr !important; }
+  input, select, textarea {
+    font-size: 16px !important; /* prevents iOS zoom on focus */
+  }
+
+  /* ── STATUS BADGES bigger on mobile ─────── */
+  .status-badge { font-size: 12px; padding: 4px 12px; }
+
+  /* ── BUTTONS bigger touch targets ───────── */
+  .btn-primary { padding: 14px 24px; font-size: 15px; }
+  .btn-sm { padding: 10px 16px; font-size: 13px; }
+
+  /* ── BOOKING SUCCESS MODAL ───────────────── */
+  #booking-success > div {
+    border-radius: 20px;
+    padding: 28px 20px;
+  }
+}
+
+/* Hide bottom nav on desktop */
+@media (min-width: 769px) {
+  .mobile-bottom-nav { display: none; }
+}
