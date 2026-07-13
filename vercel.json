@@ -16,6 +16,22 @@
       "dest": "/api-server.js"
     },
     {
+      "src": "/app/app\\.css",
+      "dest": "/public/app/app.css"
+    },
+    {
+      "src": "/app/admin\\.js",
+      "dest": "/public/app/admin.js"
+    },
+    {
+      "src": "/app/client\\.js",
+      "dest": "/public/app/client.js"
+    },
+    {
+      "src": "/app/admin/index\\.html",
+      "dest": "/public/app/admin/index.html"
+    },
+    {
       "src": "/app/admin",
       "dest": "/public/app/admin/index.html"
     },
@@ -30,6 +46,14 @@
     {
       "src": "/app/(.*)",
       "dest": "/public/app/index.html"
+    },
+    {
+      "src": "/assets/(.*)",
+      "dest": "/public/assets/$1"
+    },
+    {
+      "src": "/(.*\\.(css|js|png|jpg|jpeg|gif|webp|ico|json|txt|xml|svg|woff|woff2|map))",
+      "dest": "/public/$1"
     },
     {
       "src": "/(.*)",
