@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruach — Practice Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/app/app.css">
+</head>
+<body class="admin-body">
+
+<!-- Login Screen -->
+<div id="login-screen" class="login-screen">
+  <div class="login-card">
+    <div class="login-logo">
+      <img src="/assets/logo_ruach.png" alt="Ruach" onerror="this.style.display='none'">
+      <h2>Practice Portal</h2>
+      <p>Therapist access only</p>
+    </div>
+    <div id="login-error" class="alert alert-error" style="display:none"></div>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" id="admin-email" value="melissa@ruachpsychotherapy.com" placeholder="Email">
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" id="admin-password" value="Ruach2024!" placeholder="Password">
+    </div>
+    <button class="btn-primary btn-full" onclick="adminLogin()">Sign In</button>
+    <p class="login-footer">Client? <a href="/app">Go to client portal →</a></p>
+  </div>
+</div>
+
+<!-- App Shell -->
+<div id="app-shell" class="app-shell" style="display:none">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <img src="/assets/logo_ruach.png" alt="Ruach" class="sidebar-logo" onerror="this.style.display='none'">
+      <div class="sidebar-title">
+        <span class="sidebar-name">Melissa</span>
+        <span class="sidebar-role">Therapist</span>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#" class="nav-item active" data-page="dashboard">
+        <i class="fas fa-th-large"></i><span>Dashboard</span>
+      </a>
+      <a href="#" class="nav-item" data-page="calendar">
+        <i class="fas fa-calendar-alt"></i><span>Calendar</span>
+        <span class="badge" id="badge-pending" style="display:none"></span>
+      </a>
+      <a href="#" class="nav-item" data-page="clients">
+        <i class="fas fa-users"></i><span>Clients</span>
+        <span class="badge" id="badge-clients" style="display:none"></span>
+      </a>
+      <a href="#" class="nav-item" data-page="messages">
+        <i class="fas fa-comment-dots"></i><span>Messages</span>
+        <span class="badge" id="badge-messages" style="display:none"></span>
+      </a>
+      <a href="#" class="nav-item" data-page="availability">
+        <i class="fas fa-clock"></i><span>Availability</span>
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="/" class="nav-item"><i class="fas fa-globe"></i><span>Main Website</span></a>
+      <button class="nav-item nav-logout" onclick="logout()"><i class="fas fa-sign-out-alt"></i><span>Sign Out</span></button>
+    </div>
+  </aside>
+
+  <!-- Main content -->
+  <main class="main-content">
+    <div class="topbar">
+      <button class="menu-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+      <h1 class="page-title" id="page-title">Dashboard</h1>
+      <div class="topbar-right">
+        <span class="topbar-date" id="topbar-date"></span>
+      </div>
+    </div>
+
+    <!-- Dashboard Page -->
+    <div id="page-dashboard" class="page active">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon green"><i class="fas fa-users"></i></div>
+          <div class="stat-info">
+            <div class="stat-value" id="stat-clients">—</div>
+            <div class="stat-label">Total Clients</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon amber"><i class="fas fa-clock"></i></div>
+          <div class="stat-info">
+            <div class="stat-value" id="stat-pending">—</div>
+            <div class="stat-label">Pending Requests</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon teal"><i class="fas fa-calendar-check"></i></div>
+          <div class="stat-info">
+            <div class="stat-value" id="stat-today">—</div>
+            <div class="stat-label">Sessions Today</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon purple"><i class="fas fa-comment-dots"></i></div>
+          <div class="stat-info">
+            <div class="stat-value" id="stat-messages">—</div>
+            <div class="stat-label">Unread Messages</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dashboard-grid">
+        <div class="card">
+          <div class="card-header">
+            <h3>This Week's Sessions</h3>
+            <button class="btn-link" onclick="goPage('calendar')">View all →</button>
+          </div>
+          <div id="today-appointments" class="apt-list"></div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h3>Pending Requests</h3>
+            <button class="btn-link" onclick="goPage('calendar')">View all →</button>
+          </div>
+          <div id="pending-appointments" class="apt-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Calendar Page -->
+    <div id="page-calendar" class="page">
+      <div class="page-toolbar">
+        <div class="filter-row">
+          <input type="date" id="filter-from" class="input-sm">
+          <span>to</span>
+          <input type="date" id="filter-to" class="input-sm">
+          <select id="filter-status" class="input-sm">
+            <option value="">All statuses</option>
+            <option value="pending">Pending</option>
+            <option value="confirmed">Confirmed</option>
+            <option value="cancelled">Cancelled</option>
+          </select>
+          <button class="btn-sm btn-green" onclick="loadAppointments()">Filter</button>
+          <div class="view-toggle">
+            <button class="view-btn active" id="view-list" onclick="setCalView('list')" title="List view"><i class="fas fa-list"></i></button>
+            <button class="view-btn" id="view-week" onclick="setCalView('week')" title="Week view"><i class="fas fa-calendar-week"></i></button>
+            <button class="view-btn" id="view-month" onclick="setCalView('month')" title="Month view"><i class="fas fa-calendar-alt"></i></button>
+          </div>
+        </div>
+      </div>
+      <!-- List view -->
+      <div id="cal-list-view" class="card">
+        <div id="appointments-list" class="table-wrap"></div>
+      </div>
+      <!-- Week view -->
+      <div id="cal-week-view" style="display:none">
+        <div class="week-nav">
+          <button class="btn-sm" onclick="shiftWeek(-1)"><i class="fas fa-chevron-left"></i> Prev</button>
+          <span class="week-label" id="week-label"></span>
+          <button class="btn-sm" onclick="shiftWeek(1)">Next <i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="week-grid" id="week-grid"></div>
+      </div>
+      <!-- Month view -->
+      <div id="cal-month-view" style="display:none">
+        <div class="week-nav">
+          <button class="btn-sm" onclick="shiftMonth(-1)"><i class="fas fa-chevron-left"></i> Prev</button>
+          <span class="week-label" id="month-label"></span>
+          <button class="btn-sm" onclick="shiftMonth(1)">Next <i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="month-grid" id="month-grid"></div>
+      </div>
+    </div>
+
+    <!-- Clients Page -->
+    <div id="page-clients" class="page">
+      <div class="page-toolbar">
+        <input type="text" id="client-search" class="input-sm" placeholder="Search clients…" oninput="filterClients()" style="width:260px">
+      </div>
+      <div class="card">
+        <div id="clients-list" class="table-wrap"></div>
+      </div>
+    </div>
+
+    <!-- Client Detail Page -->
+    <div id="page-client-detail" class="page">
+      <button class="btn-back" onclick="goPage('clients')">← Back to clients</button>
+      <div class="client-detail-header" id="client-detail-header"></div>
+      <div class="tabs" id="client-tabs">
+        <button class="tab active" data-tab="overview">Overview</button>
+        <button class="tab" data-tab="appointments">Appointments</button>
+        <button class="tab" data-tab="notes">Session Notes</button>
+        <button class="tab" data-tab="intake">Intake Form</button>
+        <button class="tab" data-tab="chat">Messages</button>
+      </div>
+      <div id="tab-overview" class="tab-panel active"></div>
+      <div id="tab-appointments" class="tab-panel"></div>
+      <div id="tab-notes" class="tab-panel"></div>
+      <div id="tab-intake" class="tab-panel"></div>
+      <div id="tab-chat" class="tab-panel"></div>
+    </div>
+
+    <!-- Messages Page -->
+    <div id="page-messages" class="page">
+      <div class="messages-layout">
+        <div class="messages-sidebar" id="messages-sidebar">
+          <div class="messages-search">
+            <input type="text" placeholder="Search conversations…" oninput="filterConversations(this.value)">
+          </div>
+          <div id="conversations-list"></div>
+        </div>
+        <div class="messages-main" id="messages-main">
+          <div class="messages-empty">
+            <i class="fas fa-comment-dots"></i>
+            <p>Select a conversation</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Availability Page -->
+    <div id="page-availability" class="page">
+      <div class="card">
+        <div class="card-header">
+          <h3>Weekly Availability</h3>
+          <button class="btn-sm btn-green" onclick="openAddAvailability()">+ Add Block</button>
+        </div>
+        <p class="hint-text">Set the days and hours when clients can book sessions. Each block generates 50-minute slots.</p>
+        <div id="availability-grid"></div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- Modals -->
+<div id="modal-overlay" class="modal-overlay" onclick="closeModal()" style="display:none">
+  <div class="modal" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<script src="/app/admin.js"></script>
+</body>
+</html>
