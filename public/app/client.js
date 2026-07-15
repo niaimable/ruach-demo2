@@ -272,7 +272,13 @@ function clientLogout() {
   localStorage.removeItem('ruach_client_user');
   clientToken = null; clientUser = null;
   document.getElementById('portal-app').style.display = 'none';
-  showPublicBooking();
+  document.getElementById('public-booking').style.display = 'none';
+  document.getElementById('auth-screen').style.display = 'flex';
+  // Clear the booking summary banner
+  document.getElementById('auth-booking-summary').style.display = 'none';
+  // Update auth screen to show a "browse booking" option
+  document.getElementById('auth-booking-summary').innerHTML = '';
+  showAuthTab('login');
 }
 
 // ─── API HELPER ────────────────────────────────────────────────────────────
